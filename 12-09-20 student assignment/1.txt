@@ -1,0 +1,123 @@
+Microsoft Windows [Version 10.0.18362.1082]
+(c) 2019 Microsoft Corporation. All rights reserved.
+
+C:\Users\sdeep>mongo
+MongoDB shell version v4.4.0
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("9e8a5751-d845-49ac-a295-eabadb7b1ace") }
+MongoDB server version: 4.4.0
+---
+The server generated these startup warnings when booting:
+        2020-09-12T13:46:36.328+05:30: ***** SERVER RESTARTED *****
+        2020-09-12T13:46:37.895+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> use database3
+switched to db database3
+> db
+database3
+> db.student.insert([
+...      {
+...           "name" : "Student 1",
+...           "email" : "student1@gmail.com",
+...           "age" : 20,
+...           "height" : 5.2
+...      },
+...      {
+...           "name" : "Student 2",
+...           "email" : "student2@gmail.com",
+...           "age" : 18,
+...           "height" : 4
+...      },
+...      {
+...           "name" : "Student 3",
+...           "email" : "student3@gmail.com",
+...           "age" : 15,
+...           "height" : 5.5
+...      },
+...      {
+...           "name" : "Student 4",
+...           "email" : "student4@gmail.com",
+...           "age" : 22,
+...           "height" : 6.2
+...      },
+...      {
+...           "name" : "Student 5",
+...           "email" : "student5@gmail.com",
+...           "age" : 30,
+...           "height" : 5.3
+...      },
+...      {
+...           "name" : "Student 6",
+...           "email" : "student6@gmail.com",
+...           "age" : 25,
+...           "height" : 4.1
+...      },
+...      {
+...           "name" : "Student 7",
+...           "email" : "student7@gmail.com",
+...           "age" : 21,
+...           "height" : 3
+...      },
+...      {
+...           "name" : "Student 8",
+...           "email" : "student8@gmail.com",
+...           "age" : 24,
+...           "height" : 5.3
+...      },
+...      {
+...           "name" : "Student 9",
+...           "email" : "student9@gmail.com",
+...           "age" : 19,
+...           "height" : 5.2
+...      },
+...      {
+...           "name" : "Student 10",
+...           "email" : "student10@gmail.com",
+...           "age" : 17,
+...           "height" : 5.7
+...      }
+... ])
+BulkWriteResult({
+        "writeErrors" : [ ],
+        "writeConcernErrors" : [ ],
+        "nInserted" : 10,
+        "nUpserted" : 0,
+        "nMatched" : 0,
+        "nModified" : 0,
+        "nRemoved" : 0,
+        "upserted" : [ ]
+})
+> db.student.find({age:{$gt:21,$lt:30}}).pretty()
+{
+        "_id" : ObjectId("5f648cea88ed4fae2aeed375"),
+        "name" : "Student 4",
+        "email" : "student4@gmail.com",
+        "age" : 22,
+        "height" : 6.2
+}
+{
+        "_id" : ObjectId("5f648cea88ed4fae2aeed377"),
+        "name" : "Student 6",
+        "email" : "student6@gmail.com",
+        "age" : 25,
+        "height" : 4.1
+}
+{
+        "_id" : ObjectId("5f648cea88ed4fae2aeed379"),
+        "name" : "Student 8",
+        "email" : "student8@gmail.com",
+        "age" : 24,
+        "height" : 5.3
+}
+>

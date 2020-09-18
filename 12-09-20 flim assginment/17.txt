@@ -1,0 +1,35 @@
+Microsoft Windows [Version 10.0.18362.1082]
+(c) 2019 Microsoft Corporation. All rights reserved.
+
+C:\Users\sdeep>mongo
+MongoDB shell version v4.4.0
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("c81961ce-fe5e-4178-bb07-069c3a043244") }
+MongoDB server version: 4.4.0
+---
+The server generated these startup warnings when booting:
+        2020-09-12T13:46:36.328+05:30: ***** SERVER RESTARTED *****
+        2020-09-12T13:46:37.895+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> use database2
+switched to db database2
+> db
+database2
+
+> db.flim.find({},{"title":1,"year":1,_id:0}).sort({"year":-1}).limit(4)
+{ "title" : "Monsters University", "year" : 2013 }
+{ "title" : "Brave", "year" : 2012 }
+{ "title" : "Cars 2", "year" : 2011 }
+{ "title" : "Toy Story 3", "year" : 2010 }
+>

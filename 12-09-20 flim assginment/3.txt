@@ -1,0 +1,168 @@
+Microsoft Windows [Version 10.0.18362.1082]
+(c) 2019 Microsoft Corporation. All rights reserved.
+
+C:\Users\sdeep>momgo
+'momgo' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\sdeep>mongo
+MongoDB shell version v4.4.0
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("346ae28d-b6c2-49f2-8155-f565bd533c14") }
+MongoDB server version: 4.4.0
+---
+The server generated these startup warnings when booting:
+        2020-09-12T13:46:36.328+05:30: ***** SERVER RESTARTED *****
+        2020-09-12T13:46:37.895+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> show dbs
+admin     0.000GB
+config    0.000GB
+database  0.000GB
+db        0.000GB
+dbnow     0.000GB
+local     0.000GB
+mydb      0.000GB
+test      0.000GB
+> use database2
+switched to db database2
+> db
+database2
+> db.flim.insert([
+...      {
+...        "id": 1,
+...        "title": "Toy Story",
+...        "director": "John Lasseter",
+...        "year": 1995,
+...        "length_minutes": 81
+...      },
+...      {
+...        "id": 5,
+...        "title": "Finding Nemo",
+...        "director": "Andrew Stanton",
+...        "year": 2003,
+...        "length_minutes": 107
+...      },
+...      {
+...        "id": 13,
+...        "title": "Brave",
+...        "director": "Brenda Chapman",
+...        "year": 2012,
+...        "length_minutes": 102
+...      },
+...      {
+...        "id": 14,
+...        "title": "Monsters University",
+...        "director": "Dan Scanlon",
+...        "year": 2013,
+...        "length_minutes": 110
+...      },
+...      {
+...        "id": 9,
+...        "title": "WALL-E",
+...        "director": "Andrew Stanton",
+...        "year": 2008,
+...        "length_minutes": 104
+...      },
+...      {
+...        "id": 10,
+...        "title": "Up",
+...        "director": "Pete Docter",
+...        "year": 2009,
+...        "length_minutes": 101
+...      },
+...      {
+...        "id": 12,
+...        "title": "Cars 2",
+...        "director": "John Lasseter",
+...        "year": 2011,
+...        "length_minutes": 120
+...      },
+...      {
+...        "id": 6,
+...        "title": "The Incredibles",
+...        "director": "Brad Bird",
+...        "year": 2004,
+...        "length_minutes": 116
+...      },
+...      {
+...        "id": 3,
+...        "title": "Toy Story 2",
+...        "director": "John Lasseter",
+...        "year": 1999,
+...        "length_minutes": 93
+...      },
+...      {
+...        "id": 4,
+...        "title": "Monsters, Inc.",
+...        "director": "Pete Docter",
+...        "year": 2001,
+...        "length_minutes": 92
+...      },
+...      {
+...        "id": 11,
+...        "title": "Toy Story 3",
+...        "director": "Lee Unkrich",
+...        "year": 2010,
+...        "length_minutes": 103
+...      },
+...      {
+...        "id": 8,
+...        "title": "Ratatouille",
+...        "director": "Brad Bird",
+...        "year": 2007,
+...        "length_minutes": 115
+...      },
+...      {
+...        "id": 2,
+...        "title": "A Bug's Life",
+...        "director": "John Lasseter",
+...        "year": 1998,
+...        "length_minutes": 95
+...      },
+...      {
+...        "id": 7,
+...        "title": "Cars",
+...        "director": "John Lasseter",
+...        "year": 2006,
+...        "length_minutes": 117
+...      }
+...    ])
+BulkWriteResult({
+        "writeErrors" : [ ],
+        "writeConcernErrors" : [ ],
+        "nInserted" : 14,
+        "nUpserted" : 0,
+        "nMatched" : 0,
+        "nModified" : 0,
+        "nRemoved" : 0,
+        "upserted" : [ ]
+})
+
+> db.flim.find({},{"director":1,_id:0})
+{ "director" : "John Lasseter" }
+{ "director" : "Andrew Stanton" }
+{ "director" : "Brenda Chapman" }
+{ "director" : "Dan Scanlon" }
+{ "director" : "Andrew Stanton" }
+{ "director" : "Pete Docter" }
+{ "director" : "John Lasseter" }
+{ "director" : "Brad Bird" }
+{ "director" : "John Lasseter" }
+{ "director" : "Pete Docter" }
+{ "director" : "Lee Unkrich" }
+{ "director" : "Brad Bird" }
+{ "director" : "John Lasseter" }
+{ "director" : "John Lasseter" }
+>

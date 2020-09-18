@@ -1,0 +1,210 @@
+Microsoft Windows [Version 10.0.18362.1082]
+(c) 2019 Microsoft Corporation. All rights reserved.
+
+C:\Users\sdeep>mongo
+MongoDB shell version v4.4.0
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("c09cec4f-7c86-4bee-aaf8-2374d309ad8e") }
+MongoDB server version: 4.4.0
+---
+The server generated these startup warnings when booting:
+        2020-09-12T13:46:36.328+05:30: ***** SERVER RESTARTED *****
+        2020-09-12T13:46:37.895+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> show dbs
+admin      0.000GB
+config     0.000GB
+database   0.000GB
+database2  0.000GB
+db         0.000GB
+dbnow      0.000GB
+local      0.000GB
+mydb       0.000GB
+test       0.000GB
+> use database2
+switched to db database2
+> db
+database2
+> db.flim.find().pretty()
+{
+        "_id" : ObjectId("5f6447611018ccadac4907f0"),
+        "id" : 1,
+        "title" : "Toy Story",
+        "director" : "John Lasseter",
+        "year" : 1995,
+        "length_minutes" : 81
+}
+{
+        "_id" : ObjectId("5f6447611018ccadac4907f1"),
+        "id" : 5,
+        "title" : "Finding Nemo",
+        "director" : "Andrew Stanton",
+        "year" : 2003,
+        "length_minutes" : 107
+}
+{
+        "_id" : ObjectId("5f6447611018ccadac4907f2"),
+        "id" : 13,
+        "title" : "Brave",
+        "director" : "Brenda Chapman",
+        "year" : 2012,
+        "length_minutes" : 102
+}
+{
+        "_id" : ObjectId("5f6447611018ccadac4907f3"),
+        "id" : 14,
+        "title" : "Monsters University",
+        "director" : "Dan Scanlon",
+        "year" : 2013,
+        "length_minutes" : 110
+}
+{
+        "_id" : ObjectId("5f6447611018ccadac4907f4"),
+        "id" : 9,
+        "title" : "WALL-E",
+        "director" : "Andrew Stanton",
+        "year" : 2008,
+        "length_minutes" : 104
+}
+{
+        "_id" : ObjectId("5f6447611018ccadac4907f5"),
+        "id" : 10,
+        "title" : "Up",
+        "director" : "Pete Docter",
+        "year" : 2009,
+        "length_minutes" : 101
+}
+{
+        "_id" : ObjectId("5f6447611018ccadac4907f6"),
+        "id" : 12,
+        "title" : "Cars 2",
+        "director" : "John Lasseter",
+        "year" : 2011,
+        "length_minutes" : 120
+}
+{
+        "_id" : ObjectId("5f6447611018ccadac4907f7"),
+        "id" : 6,
+        "title" : "The Incredibles",
+        "director" : "Brad Bird",
+        "year" : 2004,
+        "length_minutes" : 116
+}
+{
+        "_id" : ObjectId("5f6447611018ccadac4907f8"),
+        "id" : 3,
+        "title" : "Toy Story 2",
+        "director" : "John Lasseter",
+        "year" : 1999,
+        "length_minutes" : 93
+}
+{
+        "_id" : ObjectId("5f6447611018ccadac4907f9"),
+        "id" : 4,
+        "title" : "Monsters, Inc.",
+        "director" : "Pete Docter",
+        "year" : 2001,
+        "length_minutes" : 92
+}
+{
+        "_id" : ObjectId("5f6447611018ccadac4907fa"),
+        "id" : 11,
+        "title" : "Toy Story 3",
+        "director" : "Lee Unkrich",
+        "year" : 2010,
+        "length_minutes" : 103
+}
+{
+        "_id" : ObjectId("5f6447611018ccadac4907fb"),
+        "id" : 8,
+        "title" : "Ratatouille",
+        "director" : "Brad Bird",
+        "year" : 2007,
+        "length_minutes" : 115
+}
+{
+        "_id" : ObjectId("5f6447611018ccadac4907fc"),
+        "id" : 2,
+        "title" : "A Bug's Life",
+        "director" : "John Lasseter",
+        "year" : 1998,
+        "length_minutes" : 95
+}
+{
+        "_id" : ObjectId("5f6447611018ccadac4907fd"),
+        "id" : 7,
+        "title" : "Cars",
+        "director" : "John Lasseter",
+        "year" : 2006,
+        "length_minutes" : 117
+}
+
+> db.flim.find({year:{$not:{$gt:2000,$lt:2010}}}).pretty()
+{
+        "_id" : ObjectId("5f6447611018ccadac4907f0"),
+        "id" : 1,
+        "title" : "Toy Story",
+        "director" : "John Lasseter",
+        "year" : 1995,
+        "length_minutes" : 81
+}
+{
+        "_id" : ObjectId("5f6447611018ccadac4907f2"),
+        "id" : 13,
+        "title" : "Brave",
+        "director" : "Brenda Chapman",
+        "year" : 2012,
+        "length_minutes" : 102
+}
+{
+        "_id" : ObjectId("5f6447611018ccadac4907f3"),
+        "id" : 14,
+        "title" : "Monsters University",
+        "director" : "Dan Scanlon",
+        "year" : 2013,
+        "length_minutes" : 110
+}
+{
+        "_id" : ObjectId("5f6447611018ccadac4907f6"),
+        "id" : 12,
+        "title" : "Cars 2",
+        "director" : "John Lasseter",
+        "year" : 2011,
+        "length_minutes" : 120
+}
+{
+        "_id" : ObjectId("5f6447611018ccadac4907f8"),
+        "id" : 3,
+        "title" : "Toy Story 2",
+        "director" : "John Lasseter",
+        "year" : 1999,
+        "length_minutes" : 93
+}
+{
+        "_id" : ObjectId("5f6447611018ccadac4907fa"),
+        "id" : 11,
+        "title" : "Toy Story 3",
+        "director" : "Lee Unkrich",
+        "year" : 2010,
+        "length_minutes" : 103
+}
+{
+        "_id" : ObjectId("5f6447611018ccadac4907fc"),
+        "id" : 2,
+        "title" : "A Bug's Life",
+        "director" : "John Lasseter",
+        "year" : 1998,
+        "length_minutes" : 95
+}
+>
